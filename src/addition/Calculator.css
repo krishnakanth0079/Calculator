@@ -1,0 +1,78 @@
+.wrapper {
+    max-width: 420px;
+    min-height: 96vh;
+    margin: 0 auto;
+    background-color: rgb(140, 151, 78);
+    border: 2px solid black;
+    
+  }
+  
+  button {
+    font-size: 2rem;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+  .modifiers button {
+    background-color:rgb(218, 72, 14);
+  }
+  .operations button {
+    background-color: green;
+    width: 160px;
+  }
+  .digits button {
+    background-color: rgb(95, 146, 167);
+  }
+  
+  /* All things Grid, Flexbox, Box Alignment */
+  .wrapper,
+  .subgrid {
+    display: grid;
+  }
+  .wrapper {
+    grid-template-areas:
+      "total total total oper"
+      "modif modif modif oper"
+      "digit digit digit oper"
+      "digit digit digit oper"
+      "digit digit digit oper"
+      "digit digit digit oper";
+    grid-auto-columns: 1fr;
+  }
+  .show-input {
+    grid-area: total;
+    background-color: antiquewhite;
+    padding: 20px;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .modifiers {
+    grid-area: modif;
+  }
+  .operations {
+    grid-area: oper;
+  }
+  .digits {
+    grid-area: digit;
+  }
+  
+  .show input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+  
+  }
+  
+  .modifiers {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  
+  .digits {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .digits button {
+    flex: 1 0 26%;
+  }
+  
